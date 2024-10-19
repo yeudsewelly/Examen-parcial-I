@@ -1,0 +1,49 @@
+class Menu
+{
+    private List<Empleado> empleados = new List<Empleado>();
+
+    public void MostrarMenu()
+    {
+        int opcion;
+        do
+        {
+            Console.WriteLine("\nMenú Principal:");
+            Console.WriteLine("1. Agregar Empleado");
+            Console.WriteLine("2. Consultar Empleado por Cédula");
+            Console.WriteLine("3. Modificar Empleado");
+            Console.WriteLine("4. Borrar Empleado");
+            Console.WriteLine("5. Inicializar Arreglos");
+            Console.WriteLine("6. Reportes");
+            Console.WriteLine("0. Salir");
+            Console.Write("Seleccione una opción: ");
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    AgregarEmpleado();
+                    break;
+                case 2:
+                    ConsultarEmpleado();
+                    break;
+                case 3:
+                    ModificarEmpleado();
+                    break;
+                case 4:
+                    BorrarEmpleado();
+                    break;
+                case 5:
+                    InicializarArreglos();
+                    break;
+                case 6:
+                    MostrarSubMenuReportes();
+                    break;
+                case 0:
+                    Console.WriteLine("Saliendo del sistema...");
+                    break;
+                default:
+                    Console.WriteLine("Opción inválida.");
+                    break;
+            }
+        } while (opcion != 0);
+    }
